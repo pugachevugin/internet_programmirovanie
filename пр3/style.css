@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 30px;
+  background-color: #f0f0f0;
+  font-family: sans-serif;
+}
+
+/* 1. Главный грид-контейнер шапки */
+header {
+  display: grid;
+  grid-template-columns: 140px 1fr 140px;
+  grid-template-rows: 45px 35px;          
+  gap: 15px;                           
+  padding: 20px;
+  background-color: #bce3e6;
+}
+
+
+
+/* левая колонка, 1-я строка */
+header > *:nth-child(1) {
+  grid-column: 1;
+  grid-row: 1;
+  background-color: #3eb46a;
+}
+
+/* центральная колонка, 1-я строка */
+header > *:nth-child(2) {
+  grid-column: 2;
+  grid-row: 1;
+  display: grid;
+  grid-template-columns: 1fr 90px; 
+}
+
+/*центральная колонка, 2-я строка */
+header > *:nth-child(3) {
+  grid-column: 2;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 15px;
+}
+
+/* правая колонка, 1-я строка */
+header > *:nth-child(4) {
+  grid-column: 3;
+  grid-row: 1;
+  background-color: #3eb46a;
+}
+
+.search__input {
+  border: none;
+  padding: 0 15px;
+  font-size: 18px;
+  color: #666;
+  outline: none;
+}
+
+.search__button {
+  border: none;
+  background-color: #db6b8e;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.opions_button {
+  border: none;
+  background-color: #4182b6;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.options > .opions_button:nth-child(1) { grid-column: 1; }
+.options > .opions_button:nth-child(2) { grid-column: 2; }
+.options > .opions_button:nth-child(3) { grid-column: 3; }
+.options > .opions_button:nth-child(4) { grid-column: 4; }
