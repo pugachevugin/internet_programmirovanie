@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="header" id="Home">
+        <div class="container">
+
+            <div class="header-top">
+                <a href="#Home" class="logo" aria-label="На главную">
+                    <i class="fa-solid fa-hippo fa-2xl fa-fade"></i>
+                </a>
+                <nav class="navigation">
+                    <a href="#Home">Главная</a>
+                    <a href="#Portfolio">Портфолио</a>
+                    <a href="#Contact">Контакты</a>
+                </nav>
+            </div>
+
+            <div class="header-row">
+                <img src="img/photo.jpg" 
+                     srcset="img/photo@2x.jpg 2x" 
+                     alt="Пугачёв Евгений" 
+                     class="header-img">
+                <div class="header-desc">
+                    <h1>Пугачёв Евгений</h1>
+                    <p class="header-text">фрилансер, веб-разработчик,<br> создание сайтов</p>
+                    <div class="header-btns">
+                        <a href="#Portfolio" class="btn">Портфолио</a>
+                        <a href="#Contact" class="btn btn-outline">Контакты</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- ================= PORTFOLIO ================= -->
+    <section class="section" id="Portfolio">
+        <div class="container">
+            <h2 class="section-title">Портфолио</h2>
+
+            <div class="portfolio-list">
+
+                <article class="project">
+                    <img src="img/project01.jpg" 
+                         srcset="img/project-01@2x.jpg 2x" 
+                         alt="Сайт для дизайнера интерьеров" 
+                         class="project-img">
+                    <h3>Сайт магазина мебели</h3>
+                </article>
+
+                <article class="project">
+                    <img src="img/project-02.jpg" 
+                         srcset="img/project-02@2x.jpg 2x" 
+                         alt="Сайт туристического агентства" 
+                         class="project-img">
+                    <h3>Сайт туристического агентства</h3>
+                </article>
+
+                <article class="project">
+                    <img src="img/project-03.jpg" 
+                         srcset="img/project-03@2x.jpg 2x" 
+                         alt="Банковский сайт" 
+                         class="project-img">
+                    <h3>Банковский сайт</h3>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CONTACTS ================= -->
+    <section class="contacts" id="Contact">
+        <div class="container">
+            <h2 class="section-title section-title--light">Контакты</h2>
+
+            <div class="contact-links">
+                <a href="https://t.me/username" target="_blank" rel="noopener" class="contact-item">
+                    <img src="img/telegram.png"  
+                         alt="Telegram" 
+                         class="contact-icon">
+                    <span>Написать в Telegram</span>
+                </a>
+                <a href="https://max.ru/username" target="_blank" rel="noopener" class="contact-item">
+                    <img src="img/Max.png"  
+                         alt="Max" 
+                         class="contact-icon">
+                    <span>Отправить в Max</span>
+                </a>
+                <a href="https://vk.com/username" target="_blank" rel="noopener" class="contact-item">
+                    <img src="img/vk.png"  
+                         alt="VK" 
+                         class="contact-icon">
+                    <span>Связаться Вконтакте</span>
+                </a>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <p>© Пугачёв Евгений</p>
+                    <p>HTML верстальщик, создание сайтов</p>
+                    <p>ДОНЕЦК</p>
+                <p class="footer-note"><i class="fa-solid fa-display"></i> Макет сверстан нативно</p>
+            </div>
+        </footer>
+    </section>
+
+</body>
+</html>

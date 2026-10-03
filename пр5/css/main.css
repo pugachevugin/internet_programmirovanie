@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    background-color: #e5e5e5;
+    color: #1a1a1a;
+    line-height: 1.5;
+    padding-top: 80px; 
+}
+
+.container {
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+/* ================= ФИКСИРОВАННАЯ ШАПКА ================= */
+.header-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background: rgba(30, 30, 30, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.logo i {
+    color: burlywood;
+}
+
+/* ===== МЕНЮ С АНИМАЦИЕЙ РАЗМЫТИЯ ===== */
+.navigation {
+    display: flex;
+    column-gap: 30px;
+}
+
+.navigation a {
+    color: #fff;
+    font-size: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.3s, filter 0.4s;
+}
+
+.navigation:hover a {
+    filter: blur(6px);
+    opacity: 0.6;
+}
+
+.navigation:hover a:hover {
+    filter: blur(0);
+    opacity: 1;
+    color: aqua;
+}
+
+/* ================= ГЛАВНЫЙ ЭКРАН ================= */
+.header {
+    background: #252525 linear-gradient(150deg, #202020 0%, #2F2F2F 100%);
+    border-bottom-right-radius: 100px;
+    color: #fff;
+    padding: 100px 0 80px; 
+}
+
+.header-row {
+    display: flex;
+    align-items: center;
+    column-gap: 60px;
+}
+
+.header-img {
+    width: 540px;
+    max-width: 100%;
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    animation: fadeUp 0.8s ease-out;
+}
+
+.header-desc {
+    animation: fadeUp 0.8s ease-out 0.2s both;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+.header-text {
+    font-weight: 300;
+    font-size: 26px;
+    margin-bottom: 30px;
+    color: #cccccc;
+}
+
+.header-btns {
+    display: flex;
+    column-gap: 15px;
+}
+
+/* ===== КНОПКИ===== */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    line-height: 1.2;
+    background-color: #000;
+    border-radius: 6px;
+    color: #fff;
+    border: 2px solid #000;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #1782CF;
+    border-color: #1782CF;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid #fff;
+}
+
+.btn-outline:hover {
+    background-color: #fff;
+    color: #000;
+    border-color: #fff;
+    transform: translateY(-2px);
+}
+
+/* ================= СЕКЦИИ ================= */
+.section {
+    padding: 80px 0;
+    scroll-margin-top: 100px;
+}
+
+.section-title {
+    font-weight: 700;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 50px;
+}
+
+/* ================= ПОРТФОЛИО ================= */
+.portfolio-list {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+    align-items: center;
+}
+
+.project {
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+}
+
+.project-img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.project:hover .project-img {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.project h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+.project p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* ================= КОНТАКТЫ ================= */
+.contacts {
+    background: #1e1e1e;
+    border-top-left-radius: 100px;
+    padding: 80px 0 20px;
+    color: #fff;
+    scroll-margin-top: 80px;
+}
+
+.section-title--light { color: #fff; }
+.section-subtitle--light { color: #aaa; }
+
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 60px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 28px;
+    background: #2a2a2a;
+    border-radius: 12px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.contact-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.contact-item:hover {
+    background: #3a3a3a;
+    transform: translateY(-3px);
+}
+
+.footer {
+    border-top: 1px solid #333;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 14px;
+    color: #888;
+}
+
+/* ================= АНИМАЦИИ ================= */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* =================МОБИЛЬНАЯ ВЕРСИЯ================= */
+@media (max-width: 768px) {
+    body { padding-top: 70px; }
+
+    .header-top {
+        padding: 12px 20px;
+    }
+
+    .navigation { column-gap: 20px; }
+    .navigation a { font-size: 13px; }
+
+    .header {
+        border-bottom-right-radius: 60px;
+        padding: 80px 0 60px;
+    }
+
+    .header-row {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .header-img { width: 100%; }
+    h1 { font-size: 38px; }
+    .header-text { font-size: 18px; }
+
+    .header-btns { justify-content: center; }
+
+    .section-title { font-size: 28px; }
+    .project h3 { font-size: 20px; }
+
+    .contacts {
+        border-top-left-radius: 60px;
+        padding-top: 60px;
+    }
+
+    .contact-links {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .contact-item { justify-content: center; }
+}
+
+/* =================ФУТЕР================= */
+.footer p {
+    margin-bottom: 6px;
+}
+
+.footer-note {
+    font-size: 13px;
+    color: #777;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.footer-note i {
+    font-size: 14px;
+    color: #999;
+}
