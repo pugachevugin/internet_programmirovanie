@@ -1,0 +1,138 @@
+/* ---------- Фон страницы (изменён по заданию) ---------- */
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  text-align: center;
+
+  /* было белое — стало нежно-голубое небо */
+  background: linear-gradient(to bottom, #cfe9ff, #eaf7ff);
+}
+
+h1 {
+  margin: 30px 0 10px;
+  color: #2c3e50;
+  font-size: 28px;
+}
+
+.subtitle {
+  margin: 0 0 20px;
+  color: #5b6b7a;
+  font-size: 15px;
+}
+
+code {
+  background: #ffffff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #c0392b;
+}
+
+/* ---------- Холст ---------- */
+.canvas {
+  display: flex;
+  justify-content: center;   /* выравниваем дерево по центру */
+  align-items: flex-end;
+  height: 600px;
+}
+
+/* ---------- Ствол и ветки ---------- */
+.trunk,
+.branch {
+  border-radius: 25px;
+  background: linear-gradient(to right, #7f3333, #4d2020);
+}
+
+.trunk {
+  position: relative;
+  width: 10px;
+  height: 500px;
+  margin: 0 auto;
+}
+
+.branch {
+  position: absolute;
+  width: 5px;
+  transform-origin: bottom center;  /* вращаем вокруг места крепления */
+}
+
+/* чётные ветки — вправо, нечётные — влево */
+.branch:nth-child(even) { transform: rotate(60deg); }
+.branch:nth-child(odd)  { transform: rotate(-60deg); }
+
+/* ярус и длина каждой ветки */
+.branch:nth-child(1) { top: 180px; height: 180px; }
+.branch:nth-child(2) { top: 160px; height: 150px; }
+.branch:nth-child(3) { top: 120px; height: 150px; }
+.branch:nth-child(4) { top: 100px; height: 130px; }
+.branch:nth-child(5) { top:  70px; height: 120px; }
+.branch:nth-child(6) { top:  50px; height: 110px; }
+
+/* ---------- Листья (цвет изменён по заданию) ---------- */
+.leaf {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 75% 0 75% 0;
+  background: linear-gradient(to right, #ffd166, #f08c1a);
+}
+
+.leaf:nth-child(1) { top: 5px;  }
+.leaf:nth-child(2) { top: 20px; }
+.leaf:nth-child(3) { top: 50px; }
+
+/* нечётные листья растут в одну сторону */
+.leaf:nth-child(odd) {
+  left: 100%;
+  transform-origin: 0% 100%;
+  animation-name: leaf-odd-grow;
+  animation-duration: 4s;
+  animation-fill-mode: both;
+}
+
+@keyframes leaf-odd-grow {
+  0%   { transform: scale(0); }
+  100% { transform: scale(1); }
+}
+
+/* чётные — в другую, поэтому поворачиваем на -90° */
+.leaf:nth-child(even) {
+  left: -150%;
+  transform-origin: 50% 100%;
+  animation-name: leaf-even-grow;
+  animation-duration: 4s;
+  animation-fill-mode: both;
+}
+
+@keyframes leaf-even-grow {
+  0%   { transform: rotate(-90deg) scale(0); }
+  100% { transform: rotate(-90deg) scale(1); }
+}
+
+/* задержки: чем выше ряд, тем позже появляется */
+.leaf:nth-child(1) { animation-delay: 3.5s; }
+.leaf:nth-child(2) { animation-delay: 3s;   }
+.leaf:nth-child(3) { animation-delay: 2.5s; }
+
+/* ---------- Плоды (добавлены по заданию) ---------- */
+.fruit {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #ff8f6b, #a80e26);
+  transform-origin: 50% 0%;
+
+  animation-name: fruit-grow;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-delay: 5s;
+}
+
+.fruit:nth-child(4) { top: 30px; left: 130%; }
+.fruit:nth-child(5) { top: 70px; left: -180%; }
+
+@keyframes fruit-grow {
+  0%   { transform: scale(0); }
+  100% { transform: scale(1); }
+}
