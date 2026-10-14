@@ -1,192 +1,337 @@
+
 html {
     box-sizing: border-box;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: inherit;
 }
 
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
-    color: #333;
+    font-size: 16px;
     line-height: 1.5;
+    color: #000;
+    background-color: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
-    max-width: 1440px; 
+    max-width: 1168px;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 20px;
 }
+
 
 header {
     background-color: #4694DC;
-    min-height: 420px;
-    padding: 82px 0 0;
-    color: #FFF;
+    height: 500px;
+    padding-top: 154px;
+    color: #fff;
 }
 
 .header_title {
     font-size: 56px;
     font-weight: 600;
-    margin-top: 0;
-    margin-bottom: 35px;
     line-height: 1.2;
+    margin: 0;
 }
 
 .header_text {
     font-size: 16px;
     font-weight: 400;
-    max-width: 437px;
     line-height: 24px;
-    margin-bottom: 47px;
+    margin: 1px 0 0;
 }
 
+
 .header_button {
-    border: none;
+    position: relative;        
+    overflow: hidden;            
+    display: block;
     width: 194px;
     height: 60px;
+    margin-top: 48px;
+    padding: 0;
+    font-family: inherit;
     font-size: 16px;
     font-weight: 400;
-    font-family: 'Montserrat', sans-serif;
+    color: #000;
     background-color: #fff;
-    color: #333;
+    border: none;
+    border-radius: 0;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition:
+        background-color 0.3s ease,
+        transform 0.25s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Блик при наведении */
+.header_button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(70, 148, 220, 0.35),
+        transparent
+    );
+    transition: left 0.5s ease;
+   
+}
+
+.header_button:hover::after {
+    left: 100%;
 }
 
 .header_button:hover {
     background-color: #f0f0f0;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(70, 148, 220, 0.4);
+    animation: pulse 1.5s infinite;  
 }
 
-/* =================SERVICES================= */
-.services {
-    padding: 80px 0;
+.header_button:active {
+    transform: translateY(-1px) scale(0.98);
+    animation: none;
+}
+
+@keyframes pulse {
+    0%   { box-shadow: 0 0 0 0    rgba(70, 148, 220, 0.6); }
+    70%  { box-shadow: 0 0 0 15px rgba(70, 148, 220, 0);   }
+    100% { box-shadow: 0 0 0 0    rgba(70, 148, 220, 0);   }
+}
+
+
+.block {
+    max-width: 465px;
+    margin: 0 auto;
     text-align: center;
 }
 
 .block_title {
-    font-size: 32px;
+    font-size: 16px;
     font-weight: 600;
-    margin-top: 0;
-    margin-bottom: 15px;
-    color: #333;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    line-height: 1.2;
+    letter-spacing: 3.3px;
+    margin: 0;
+    color: #000;
 }
 
 .block_text {
     font-size: 16px;
-    color: #666;
-    max-width: 600px;
-    margin: 0 auto 50px;
-    line-height: 1.6;
+    font-weight: 400;
+    line-height: 24px;
+    color: #9CA3AF;
+    margin: 25px 0 0;
+}
+
+
+.services {
+    padding-top: 100px;
 }
 
 .services_items {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 79px;
 }
 
 .services_item {
-    background: #fff;
-    padding: 40px 20px;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    flex: 1;
-    min-width: 280px;
-    max-width: 350px;
+    position: relative;         
+    overflow: hidden;           
+    width: 280px;
+    height: 179px;
+    background-color: #fff;
+    border-radius: 8px;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Блик */
+.services_item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(70, 148, 220, 0.2),
+        transparent
+    );
+    transition: left 0.6s ease;
+    pointer-events: none;
+}
+
+.services_item:hover::after {
+    left: 100%;
 }
 
 .services_item:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 45px rgba(70, 148, 220, 0.35);
 }
 
 .services_icon {
-    font-size: 40px;
+    font-size: 60px;
+    line-height: 1;
     color: #4694DC;
-    margin-bottom: 20px;
     display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.services_item:hover .services_icon {
+    transform: translateY(-5px) rotate(-8deg);
 }
 
 .services_title {
-    font-size: 20px;
-    font-weight: 600;
-    color: #333;
-    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #9CA3AF;
+    margin: 20px 0 0;
+    max-width: 240px;
 }
 
-/* =================TEAM================= */
 .team {
-    padding: 80px 0;
-    text-align: center;
-    background-color: #fafafa;
+    padding-top: 160px;
+    padding-bottom: 142px;
 }
 
 .team_items {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    margin-top: 50px;
+    gap: 50px;
+    margin-top: 80px;
 }
 
 .team_item {
+    position: relative;        
+    overflow: hidden;          
+    width: 260px;
+    height: 76px;
+    background-color: #fff;
+    border-radius: 11px;
+    box-shadow: 0 4px 70px rgba(91, 93, 99, 0.06);
     display: flex;
     align-items: center;
-    background: #fff;
-    padding: 20px 30px;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    min-width: 280px;
+    padding-left: 20px;
+    gap: 8px;
+    cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Блик */
+.team_item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(70, 148, 220, 0.2),
+        transparent
+    );
+    transition: left 0.6s ease;
+    pointer-events: none;
+}
+
+.team_item:hover::after {
+    left: 100%;
 }
 
 .team_item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 40px rgba(70, 148, 220, 0.35);
 }
 
 .team_avatar {
-    width: 60px;
-    height: 60px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     object-fit: cover;
-    margin-right: 20px;
+    flex-shrink: 0;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.team_item:hover .team_avatar {
+    transform: scale(1.15);
+    box-shadow: 0 0 0 3px rgba(70, 148, 220, 0.4);
 }
 
 .team_info {
+    display: flex;
+    flex-direction: column;
     text-align: left;
 }
 
 .team_name {
-    font-size: 16px;
-    font-weight: 600;
-    color: #333;
-    margin: 0 0 5px 0;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+    margin: 0;
+    color: #000;
 }
 
 .team_role {
-    font-size: 12px;
-    color: #888;
-    margin: 0;
+    font-size: 11px;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1;
+    margin: 8px 0 0;
+    color: #9CA3AF;
 }
 
 
-/* =================МОБИЛЬНАЯ ВЕРСИЯ================= */
+.js .reveal {
+    opacity: 0;
+}
+
+
+@media screen and (max-width: 992px) {
+    .services_items,
+    .team_items {
+        flex-wrap: wrap;
+    }
+}
+
 @media screen and (max-width: 768px) {
     header {
-        padding: 60px 20px 40px;
-        text-align: center;
+        height: auto;
+        padding: 60px 0;
     }
-    
-    .header_text {
-        margin: 0 auto 30px;
+
+    .header_title {
+        font-size: 36px;
+    }
+
+    .services {
+        padding-top: 60px;
+    }
+
+    .team {
+        padding: 80px 0;
     }
 
     .services_items,
@@ -195,8 +340,13 @@ header {
         align-items: center;
     }
 
+    .services_item {
+        width: 100%;
+        max-width: 280px;
+    }
+
     .team_item {
         width: 100%;
-        max-width: 350px;
+        max-width: 260px;
     }
 }
