@@ -1,4 +1,3 @@
-
 const containers = document.querySelectorAll(
     'header, .services .block, .services_items, .team .block, .team_items'
 );

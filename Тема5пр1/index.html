@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+    <header class="header" id="Home">
+        <div class="container">
+            <div class="header-top">
+                <nav class="navigation">
+                    <a href="#Home"      class="reveal">Главная</a>
+                    <a href="#Portfolio" class="reveal">Портфолио</a>
+                    <a href="#Contact"   class="reveal">Контакты</a>
+                </nav>
+            </div>
+
+            <div class="header-row">
+                <div class="header-desc">
+                    <div class="timer reveal">
+                        <p class="timer-text">до конца дня осталось</p>
+                        <samp id="countdown">00: 00: 00</samp>
+                    </div>
+
+                    <h1 class="reveal">Ваше <br> ИМЯ</h1>
+                    <p class="header-text reveal">
+                        фрилансер, веб-разработчик,<br>создание сайтов
+                    </p>
+                    <div class="header-btns reveal">
+                        <a href="#Portfolio" class="btn">Портфолио</a>
+                        <a href="#Contact" class="btn btn-outline">Контакты</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="section" id="Portfolio">
+        <div class="container">
+            <h2 class="section-title reveal">Портфолио</h2>
+            <div class="portfolio-list">
+                <article class="project reveal" data-animate="animate__fadeInUp" data-delay="0.1s">
+                    <img src="img/project01.jpg" srcset="img/project-01@2x.jpg 2x" alt="Сайт магазина мебели" class="project-img">
+                    <h3>Сайт магазина мебели</h3>
+                </article>
+                <article class="project reveal" data-animate="animate__fadeInUp" data-delay="0.1s">
+                    <img src="img/project-02.jpg" srcset="img/project-02@2x.jpg 2x" alt="Сайт туристического агентства" class="project-img">
+                    <h3>Сайт туристического агентства</h3>
+                </article>
+                <article class="project reveal" data-animate="animate__fadeInUp" data-delay="0.1s">
+                    <img src="img/project-03.jpg" srcset="img/project-03@2x.jpg 2x" alt="Сайт жилого комплекса" class="project-img">
+                    <h3>Сайт жилого комплекса</h3>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="contacts" id="Contact">
+        <div class="container">
+            <h2 class="section-title section-title--light">Контакты</h2>
+            <div class="contact-links">
+                <a href="https://t.me/username" target="_blank" rel="noopener" class="contact-item reveal" data-animate="animate__fadeInUp" data-delay="0.1s">
+                    <img src="img/telegram.svg" alt="Telegram" class="contact-icon">
+                    <span>Написать в Telegram</span>
+                </a>
+                <a href="https://max.ru/username" target="_blank" rel="noopener" class="contact-item reveal" data-animate="animate__fadeInUp" data-delay="0.1s">
+                    <img src="img/Max.svg" alt="Max" class="contact-icon">
+                    <span>Отправить в Max</span>
+                </a>
+                <a href="https://vk.com/username" target="_blank" rel="noopener" class="contact-item reveal" data-animate="animate__fadeInUp" data-delay="0.1s">
+                    <img src="img/vk.svg" alt="VK" class="contact-icon">
+                    <span>Связаться Вконтакте</span>
+                </a>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="container">
+                <p>© Ваше ИМЯ<br>HTML верстальщик, создание сайтов<br>ДОНЕЦК</p>
+                <p class="footer-note">💻 Макет сверстан нативно</p>
+            </div>
+        </footer>
+    </section>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

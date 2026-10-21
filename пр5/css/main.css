@@ -13,6 +13,8 @@ body {
     overflow-x: hidden;
 }
 
+/* ---------- Фиксированное меню (добавка, в макете его нет) ---------- */
+
 .header-top {
     position: fixed;
     top: 0;
@@ -57,7 +59,7 @@ body {
 }
 
 .header {
-    background: #252525 linear-gradient(150deg, #2e2e2e 0%, #1f1f1f 100%);
+    background: #252525 linear-gradient(137deg, #2f2f2f 21%, #202020 80%);
     border-bottom-right-radius: 100px;
     color: #fff;
     min-height: 630px;
@@ -66,7 +68,7 @@ body {
 
 .header > .container {
     width: 100%;
-    max-width: 1170px;
+    max-width: 1200px;          
     margin: 0 auto;
     padding: 0 15px;
 }
@@ -74,7 +76,7 @@ body {
 .header-row {
     display: flex;
     align-items: flex-start;
-    column-gap: 90px;
+    column-gap: 60px;           
 }
 
 .header-img {
@@ -83,7 +85,6 @@ body {
     border-radius: 80px;
     object-fit: cover;
     flex-shrink: 0;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 .header-desc {
@@ -92,18 +93,22 @@ body {
 }
 
 h1 {
+    width: 411px;
+    max-width: 100%;
+    margin: 0 0 10px 1px;
     font-weight: 700;
     font-size: 60px;
-    line-height: 1.2;
-    margin-bottom: 84px;
+    line-height: 73px;
 }
 
 .header-text {
+    width: 540px;
+    max-width: 100%;
+    margin: 0 0 20px 30px;
     font-weight: 300;
     font-size: 26px;
-    line-height: 1.5;
-    color: #e0e0e0;
-    margin-bottom: 20px;
+    line-height: 32px;
+    color: #fff;
 }
 
 .header-btns {
@@ -118,17 +123,19 @@ h1 {
     align-items: center;
     justify-content: center;
     height: 48px;
-    padding: 0 25px;
+    padding: 0;
     font-size: 16px;
     line-height: 1;
     background-color: #000;
     border-radius: 8px;
     color: #fff;
-    border: 2px solid #000;
+    border: 1px solid #000;
     text-decoration: none;
     transition: all 0.3s ease;
     cursor: pointer;
 }
+
+.header-btns .btn:first-child { width: 146px; }
 
 .btn::after {
     content: '';
@@ -157,8 +164,9 @@ h1 {
 }
 
 .btn-outline {
+    width: 128px;
     background-color: transparent;
-    border: 2px solid #3b3b3b;
+    border: 1px solid #3c3c3c;
     color: #fff;
 }
 
@@ -170,6 +178,8 @@ h1 {
     box-shadow: 0 8px 20px rgba(255, 255, 255, 0.25);
 }
 
+/* ---------- Портфолио ---------- */
+
 .section {
     padding: 80px 0;
     scroll-margin-top: 80px;
@@ -177,7 +187,7 @@ h1 {
 
 .section > .container {
     width: 100%;
-    max-width: 970px;
+    max-width: 1000px;          
     margin: 0 auto;
     padding: 0 15px;
 }
@@ -185,9 +195,9 @@ h1 {
 .section-title {
     font-weight: 700;
     font-size: 52px;
-    line-height: 1.2;
+    line-height: 63px;
     text-align: center;
-    margin-bottom: 66px;
+    margin-bottom: 65px;
     color: #000;
 }
 
@@ -222,6 +232,7 @@ h1 {
 
 .project h3 {
     font-size: 22px;
+    line-height: 27px;
     font-weight: 400;
     text-decoration: underline;
     margin-top: 30px;
@@ -230,6 +241,11 @@ h1 {
 }
 
 .project:hover h3 { color: #1782CF; }
+
+
+.cap-mobile { display: none; }
+
+/* ---------- Контакты ---------- */
 
 .contacts {
     background: #252525;
@@ -261,8 +277,8 @@ h1 {
     width: 370px;
     height: 140px;
     padding-left: 20px;
-    background: #1e1e1e;
-    border: 1px solid #353535;
+    background: transparent;   
+    border: 1px solid #363636;
     border-radius: 20px;
     color: #fff;
     text-decoration: none;
@@ -279,6 +295,16 @@ h1 {
     transition: transform 0.3s ease;
 }
 
+
+@media (min-width: 481px) {
+    .contact-item:nth-child(2) { background: #1e1e1e; }
+}
+
+
+@media (min-width: 1025px) {
+    .contact-item:nth-child(n+2) .contact-icon { margin-top: 5.4px; }
+}
+
 .contact-item:hover {
     background: #2a2a2a;
     transform: translateY(-3px);
@@ -289,12 +315,15 @@ h1 {
     transform: scale(1.15) rotate(-8deg);
 }
 
+/* ---------- Футер ---------- */
+
 .footer {
     background: #1e1e1e;
-    padding: 30px 0;
+    padding: 30px 0 12px;
+    min-height: 126px;
     text-align: center;
     font-size: 14px;
-    line-height: 17.066px;
+    line-height: 17px;
     color: #5d5d5d;
 }
 
@@ -303,15 +332,30 @@ h1 {
 .footer-note {
     margin-top: 15px !important;
     color: #5886a8;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
 }
 
-.footer-note i { color: #5886a8; }
+.footer-icon {
+    height: 0.94em;
+    width: auto;
+    margin-right: 5px;
+    vertical-align: baseline;
+}
+
+/* десктоп: в макете текстовый блок футера (ширина 330) смещён на 18px вправо от центра */
+@media (min-width: 1025px) {
+    .footer .container {
+        position: relative;
+        left: 18px;
+        width: 330px;
+        margin: 0 auto;
+    }
+}
+
+/* ---------- Анимация появления ---------- */
 
 .js .reveal { opacity: 0; }
+
+/* ---------- Адаптив ---------- */
 
 @media (max-width: 1240px) {
     .contact-item { width: 340px; height: 120px; }
@@ -326,20 +370,37 @@ h1 {
     }
     .header-row { column-gap: 40px; }
     .header-desc { padding-top: 40px; }
-    h1 { font-size: 44px; margin-bottom: 30px; }
-    .header-text { font-size: 20px; margin-bottom: 25px; }
-    .section-title { font-size: 40px; margin-bottom: 50px; }
+    h1 {
+        width: auto;
+        font-size: 44px;
+        line-height: 1.2;
+        margin: 0 0 30px;
+    }
+    .header-text {
+        width: auto;
+        font-size: 20px;
+        line-height: 1.5;
+        margin: 0 0 25px;
+    }
+    .btn { padding: 0 25px; }
+    .header-btns .btn:first-child,
+    .btn-outline { width: auto; }
+    .section-title { font-size: 40px; line-height: 1.2; margin-bottom: 50px; }
     .portfolio-list { gap: 50px; }
 }
 
-@media (max-width: 480px) {
-    body { padding-top: 56px; }
 
-    .header-top { padding: 10px 15px; }
+
+@media (max-width: 480px) {
+    body { padding-top: 0; }
+
+    .header-top { display: none;}
     .navigation { column-gap: 14px; }
     .navigation a { font-size: 11px; letter-spacing: 0; }
 
+    /* шапка 320×526: 20 + фото 252 + 20 + контент 194 + 40 */
     .header {
+        background: #252525 linear-gradient(158.2deg, #2f2f2f 20.748%, #202020 80.24%);
         border-bottom-right-radius: 60px;
         padding: 20px 0 40px;
         min-height: auto;
@@ -347,115 +408,53 @@ h1 {
 
     .header > .container { padding: 0 15px; }
 
-    .header-row {
-        flex-direction: column;
-        row-gap: 20px;
-        align-items: stretch;
-    }
-
-    .header-img {
-        width: 100%;
-        height: 252px;
-        aspect-ratio: 290 / 252;
-        border-radius: 30px;
-    }
-
+    .header-row { flex-direction: column; row-gap: 20px; align-items: stretch; }
+    .header-img { width: 100%; height: 252px; border-radius: 30px; }
     .header-desc { padding-top: 0; }
 
     h1 {
+        margin: 0 0 10px;
         font-size: 32px;
-        line-height: 1.3;
-        margin-bottom: 5px;
+        line-height: 39px;
+        text-transform: uppercase;
     }
 
     .header-text {
+        margin: 0 0 20px;
         font-size: 18px;
-        line-height: 1.3;
-        color: #cccccc;
-        margin-bottom: 40px;
+        line-height: 22px;
     }
 
     .header-btns { column-gap: 10px; }
+    .btn { height: 42px; padding: 0; }
+    .header-btns .btn:first-child { width: 126px; }
+    .btn-outline { width: 108px; }
 
-    .btn {
-        height: 42px;
-        padding: 0 15px;
-        font-size: 16px;
-        border-radius: 8px;
-    }
-
-    .header-btns .btn:first-child { min-width: 126px; }
-    .header-btns .btn-outline    { min-width: 108px; }
-
-    .section {
-        padding: 40px 0;
-        scroll-margin-top: 60px;
-    }
-
-    .section > .container { padding: 0 15px; }
-
-    .section-title {
-        font-size: 28px;
-        line-height: 1.3;
-        margin-bottom: 64px;
-    }
-
+  
+    .section { padding: 40px 0; scroll-margin-top: 60px; }
+    .section-title { font-size: 28px; line-height: 34px; margin-bottom: 30px; }
     .portfolio-list { gap: 30px; }
-
-    .project-img {
-        height: 135px;
-        aspect-ratio: 290 / 135;
-        border-radius: 14px;
-    }
-
+    .project-img { height: 135px; border-radius: 14px; }
     .project h3 {
         font-size: 16px;
+        line-height: 20px;
         margin-top: 20px;
+        text-decoration: none;
     }
 
-    .contacts {
-        border-top-left-radius: 60px;
-        padding: 40px 0 0;
-        scroll-margin-top: 60px;
-    }
+    .cap-desktop { display: none; }
+    .cap-mobile { display: inline; }
 
-    .contacts > .container {
-        padding: 0 15px 40px;
-    }
 
-    .contacts .section-title {
-        font-size: 28px;
-        margin-bottom: 66px;
-    }
+    .contacts { border-top-left-radius: 60px; padding: 40px 0 0; scroll-margin-top: 60px; }
+    .contacts > .container { padding: 0 15px 40px; }
+    .contacts .section-title { line-height: 36.4px; }
 
-    .contact-links {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 20px;
-    }
+    .contact-links { flex-direction: column; align-items: stretch; gap: 20px; }
+    .contact-item { width: 100%; height: 112px; border-radius: 12px; font-size: 16px; line-height: 20px; }
 
-    .contact-item {
-        width: 100%;
-        height: 112px;
-        padding-left: 20px;
-        border-radius: 12px;
-        font-size: 16px;
-    }
 
-    .contact-icon {
-        width: 48px;
-        height: 48px;
-        margin-right: 15px;
-    }
-
-    .footer {
-        padding: 30px 15px;
-        font-size: 12px;
-        line-height: 14.628px;
-    }
-
-    .footer-note {
-        margin-top: 15px !important;
-        font-size: 12px;
-    }
+    .footer { padding: 30px 15px; min-height: 120px; font-size: 12px; line-height: 15px; }
+    .footer-city { display: none; }
+    .footer-note { margin-top: 15px !important; font-size: 12px; }
 }

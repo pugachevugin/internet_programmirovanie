@@ -1,4 +1,4 @@
-
+/* ===== БАЗА ===== */
 html {
     box-sizing: border-box;
 }
@@ -11,8 +11,9 @@ html {
 
 body {
     margin: 0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat-Regular', sans-serif;
     font-size: 16px;
+    font-weight: 400;
     line-height: 1.5;
     color: #000;
     background-color: #fff;
@@ -21,45 +22,50 @@ body {
 }
 
 .container {
-    max-width: 1168px;
+    max-width: 1128px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0;
 }
 
-
+/* ===== HEADER ===== */
 header {
     background-color: #4694DC;
     height: 500px;
-    padding-top: 154px;
+    padding-top: 120px;
     color: #fff;
 }
 
 .header_title {
+    font-family: 'Montserrat-SemiBold', sans-serif;
     font-size: 56px;
     font-weight: 600;
-    line-height: 1.2;
-    margin: 0;
+    line-height: 68px;
+    margin: 0 0 34px;
+    color: #fff;
 }
 
 .header_text {
+    font-family: 'Montserrat-Regular', sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
-    margin: 1px 0 0;
+    margin: 0;
+    color: #fff;
 }
 
-
 .header_button {
-    position: relative;        
-    overflow: hidden;            
+    position: relative;
+    overflow: hidden;
     display: block;
     width: 194px;
     height: 60px;
     margin-top: 48px;
     padding: 0;
-    font-family: inherit;
+    font-family: 'Montserrat-Regular', sans-serif;
     font-size: 16px;
     font-weight: 400;
+    line-height: 60px;
+    text-align: center;
     color: #000;
     background-color: #fff;
     border: none;
@@ -71,7 +77,6 @@ header {
         box-shadow 0.3s ease;
 }
 
-/* Блик при наведении */
 .header_button::after {
     content: '';
     position: absolute;
@@ -86,7 +91,7 @@ header {
         transparent
     );
     transition: left 0.5s ease;
-   
+    pointer-events: none;
 }
 
 .header_button:hover::after {
@@ -97,7 +102,7 @@ header {
     background-color: #f0f0f0;
     transform: translateY(-3px);
     box-shadow: 0 10px 25px rgba(70, 148, 220, 0.4);
-    animation: pulse 1.5s infinite;  
+    animation: pulse 1.5s infinite;
 }
 
 .header_button:active {
@@ -111,7 +116,7 @@ header {
     100% { box-shadow: 0 0 0 0    rgba(70, 148, 220, 0);   }
 }
 
-
+/* ===== ОБЩИЙ БЛОК ЗАГОЛОВКА ===== */
 .block {
     max-width: 465px;
     margin: 0 auto;
@@ -119,23 +124,43 @@ header {
 }
 
 .block_title {
+    font-family: 'Montserrat-SemiBold', sans-serif;
     font-size: 16px;
     font-weight: 600;
-    line-height: 1.2;
+    line-height: 20px;
     letter-spacing: 3.3px;
     margin: 0;
     color: #000;
+    text-align: center;
 }
 
+/* заголовки как в Pixso: фиксированная рамка, выравнивание влево */
+/* заголовки как в Pixso */
+.services .block_title,
+.team .block_title {
+    width: max-content;
+    margin: 0 auto;
+    white-space: nowrap;
+    text-align: left;
+    position: relative;
+}
+
+.services .block_title { left: -4px; }
+.team .block_title     { left: 3.5px; }
+
 .block_text {
+    font-family: 'Montserrat-Regular', sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
+    letter-spacing: 0.04em;
     color: #9CA3AF;
-    margin: 25px 0 0;
+    margin: 24px 0 0;
+    text-align: center;
+    white-space: nowrap;
 }
 
-
+/* ===== SERVICES ===== */
 .services {
     padding-top: 100px;
 }
@@ -148,22 +173,16 @@ header {
 }
 
 .services_item {
-    position: relative;         
-    overflow: hidden;           
+    position: relative;
+    overflow: hidden;
     width: 280px;
-    height: 179px;
-    background-color: #fff;
+    height: 178.56px;
+    background: transparent;
     border-radius: 8px;
-    padding-top: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: none;
+    transition: transform 0.3s ease;
 }
 
-/* Блик */
 .services_item::after {
     content: '';
     position: absolute;
@@ -187,32 +206,58 @@ header {
 
 .services_item:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 45px rgba(70, 148, 220, 0.35);
 }
 
 .services_icon {
-    font-size: 60px;
-    line-height: 1;
-    color: #4694DC;
-    display: inline-block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     transition: transform 0.3s ease;
 }
 
+.services_icon img {
+    display: block;
+    max-width: none;
+}
+
+/* размеры и top иконок из Pixso */
+.services_item:nth-child(1) .services_icon { top: 50.99px; }
+.services_item:nth-child(1) .services_icon img { width: 41.28px; height: 35.91px; }
+
+.services_item:nth-child(2) .services_icon { top: 42.74px; }
+.services_item:nth-child(2) .services_icon img { width: 45.83px; height: 45.47px; }
+
+.services_item:nth-child(3) .services_icon { top: 45.63px; }
+.services_item:nth-child(3) .services_icon img { width: 41.94px; height: 41.57px; }
+
 .services_item:hover .services_icon {
-    transform: translateY(-5px) rotate(-8deg);
+    transform: translateX(-50%) translateY(-5px) rotate(-8deg);
 }
 
 .services_title {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 120px;
+    padding: 0 20px;
+    font-family: 'Montserrat-Regular', sans-serif;
     font-size: 16px;
     font-weight: 400;
-    line-height: 1.2;
+    line-height: 20px;
+    letter-spacing: 0;
     color: #9CA3AF;
-    margin: 20px 0 0;
-    max-width: 240px;
+    margin: 0;
+    text-align: center;
+    white-space: nowrap;
 }
 
+.services_item:nth-child(3) .services_title {
+    top: 125px;
+}
+
+/* ===== TEAM ===== */
 .team {
-    padding-top: 160px;
+    padding-top: 160.44px;
     padding-bottom: 142px;
 }
 
@@ -224,22 +269,17 @@ header {
 }
 
 .team_item {
-    position: relative;        
-    overflow: hidden;          
+    position: relative;
+    overflow: hidden;
     width: 260px;
     height: 76px;
     background-color: #fff;
     border-radius: 11px;
     box-shadow: 0 4px 70px rgba(91, 93, 99, 0.06);
-    display: flex;
-    align-items: center;
-    padding-left: 20px;
-    gap: 8px;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Блик */
 .team_item::after {
     content: '';
     position: absolute;
@@ -267,11 +307,15 @@ header {
 }
 
 .team_avatar {
-    width: 35px;
+    position: absolute;
+    left: 20px;
+    top: 21px;
+    display: block;
+    width: 34.88px;
     height: 35px;
+    max-width: none;
     border-radius: 50%;
     object-fit: cover;
-    flex-shrink: 0;
     transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
@@ -281,33 +325,48 @@ header {
 }
 
 .team_info {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
+    position: static;
 }
 
 .team_name {
+    position: absolute;
+    left: 62.85px;
+    top: 20px;
+    margin: 0;
+    font-family: 'Montserrat-Medium', sans-serif;
     font-size: 12px;
     font-weight: 500;
-    line-height: 1;
-    margin: 0;
+    line-height: 18px;
+    letter-spacing: 0;
     color: #000;
+    white-space: nowrap;
 }
 
 .team_role {
+    position: absolute;
+    left: 62.85px;
+    top: 34px;
+    margin: 0;
+    font-family: 'Montserrat-Italic', sans-serif;
     font-size: 11px;
     font-weight: 400;
-    font-style: italic;
-    line-height: 1;
-    margin: 8px 0 0;
+    line-height: 26px;
+    letter-spacing: 0;
     color: #9CA3AF;
+    white-space: nowrap;
 }
 
-
+/* ===== АНИМАЦИЯ ПОЯВЛЕНИЯ ===== */
 .js .reveal {
     opacity: 0;
 }
 
+/* ===== АДАПТИВ ===== */
+@media screen and (max-width: 1200px) {
+    .container {
+        padding: 0 20px;
+    }
+}
 
 @media screen and (max-width: 992px) {
     .services_items,
@@ -324,6 +383,20 @@ header {
 
     .header_title {
         font-size: 36px;
+        line-height: 44px;
+        margin-bottom: 24px;
+    }
+
+    .block_text {
+        white-space: normal;
+    }
+
+      .services .block_title,
+    .team .block_title {
+        width: auto;
+        left: 0;
+        text-align: center;
+        white-space: normal;
     }
 
     .services {

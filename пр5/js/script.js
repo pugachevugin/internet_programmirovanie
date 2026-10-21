@@ -24,7 +24,7 @@ if ('IntersectionObserver' in window) {
                 el.addEventListener('animationend', function handler(e) {
                     if (e.target !== el) return;
                     el.removeEventListener('animationend', handler);
-                    el.classList.remove('reveal');
+                    el.classList.remove('reveal', 'animate__animated', animation);
                     el.style.animationDelay = '';
                 });
             });
