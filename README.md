@@ -7,3 +7,7 @@
 пр 5 https://pugachevugin.github.io/internet_programmirovanie/пр5
 
 Тема2пр1 https://pugachevugin.github.io/internet_programmirovanie/Тема2пр1
+
+Тема3пр1 https://pugachevugin.github.io/internet_programmirovanie/Тема3пр1
+
+Тема5пр1 https://pugachevugin.github.io/internet_programmirovanie/Тема5пр1
