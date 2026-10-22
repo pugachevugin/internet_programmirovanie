@@ -13,8 +13,6 @@ body {
     overflow-x: hidden;
 }
 
-/* ---------- Фиксированное меню (добавка, в макете его нет) ---------- */
-
 .header-top {
     position: fixed;
     top: 0;
@@ -178,7 +176,6 @@ h1 {
     box-shadow: 0 8px 20px rgba(255, 255, 255, 0.25);
 }
 
-/* ---------- Портфолио ---------- */
 
 .section {
     padding: 80px 0;
@@ -245,7 +242,6 @@ h1 {
 
 .cap-mobile { display: none; }
 
-/* ---------- Контакты ---------- */
 
 .contacts {
     background: #252525;
@@ -315,7 +311,7 @@ h1 {
     transform: scale(1.15) rotate(-8deg);
 }
 
-/* ---------- Футер ---------- */
+
 
 .footer {
     background: #1e1e1e;
@@ -341,7 +337,7 @@ h1 {
     vertical-align: baseline;
 }
 
-/* десктоп: в макете текстовый блок футера (ширина 330) смещён на 18px вправо от центра */
+
 @media (min-width: 1025px) {
     .footer .container {
         position: relative;
@@ -351,11 +347,10 @@ h1 {
     }
 }
 
-/* ---------- Анимация появления ---------- */
+
 
 .js .reveal { opacity: 0; }
 
-/* ---------- Адаптив ---------- */
 
 @media (max-width: 1240px) {
     .contact-item { width: 340px; height: 120px; }
@@ -398,7 +393,6 @@ h1 {
     .navigation { column-gap: 14px; }
     .navigation a { font-size: 11px; letter-spacing: 0; }
 
-    /* шапка 320×526: 20 + фото 252 + 20 + контент 194 + 40 */
     .header {
         background: #252525 linear-gradient(158.2deg, #2f2f2f 20.748%, #202020 80.24%);
         border-bottom-right-radius: 60px;
