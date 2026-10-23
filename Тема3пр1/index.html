@@ -7,6 +7,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
 </head>
 <body class="bg-light d-flex flex-column min-vh-100">
 
@@ -42,17 +43,27 @@
                     <p class="lead text-secondary mb-4">
                         Мы — место, где брошенные собаки находят заботу, любовь и новый дом. Каждый хвостик здесь ждет свою семью.
                     </p>
+                    
                     <div class="d-grid gap-2 d-md-flex">
                         <a href="#dogs" class="btn btn-warning btn-lg px-4 fw-bold rounded-pill">
                             <i class="fa-solid fa-paw me-2" aria-hidden="true"></i>Мне нужен друг
                         </a>
                     </div>
                 </div>
+
                 <div class="col-lg-6">
-                    <div class="ratio ratio-16x9 rounded-4 shadow overflow-hidden bg-dark">
-                        <video autoplay loop muted playsinline controls class="object-fit-cover w-100 h-100" poster="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=800&q=80">
-                            <source src="dog.mp4" type="video/mp4">
-                        </video>
+                    <div class="ratio ratio-16x9 rounded-4 shadow overflow-hidden bg-black position-relative"
+                         role="button" tabindex="0"
+                         data-bs-toggle="modal" data-bs-target="#videoModal"
+                         aria-label="Открыть видео о приюте"
+                         style="cursor: pointer;">
+                        
+                        <div style="background-image: url('modal.png'); background-size: cover; background-position: center; width: 100%; height: 100%;"></div>
+
+                        <span class="position-absolute top-50 start-50 translate-middle bg-warning rounded-circle d-flex align-items-center justify-content-center shadow"
+                              style="width: 90px; height: 90px; font-size: 1.8rem;" aria-hidden="true">
+                            <i class="fa-solid fa-play ms-1 text-dark"></i>
+                        </span>
                     </div>
                 </div>
             </div>
@@ -84,15 +95,15 @@
             </div>
         </section>
 
-       
         <section id="dogs" class="py-5 bg-white">
             <div class="container">
                 <div class="text-center mb-5">
                     <h2 class="fw-bold">Ищут дом</h2>
+                    <p class="text-muted mb-0">Листайте стрелками, чтобы увидеть всех</p>
                 </div>
 
                 <div class="d-lg-none">
-                    <div id="dogsMobile" class="carousel slide" data-bs-ride="false">
+                    <div id="dogsMobile" class="carousel slide">
                         <div class="carousel-inner px-4">
 
                             <div class="carousel-item active">
@@ -220,7 +231,7 @@
                 </div>
 
                 <div class="d-none d-lg-block">
-                    <div id="dogsDesktop" class="carousel slide" data-bs-ride="false">
+                    <div id="dogsDesktop" class="carousel slide">
                         <div class="carousel-inner px-5">
 
                             <div class="carousel-item active">
@@ -434,6 +445,33 @@
             </div>
         </div>
     </footer>
+
+    <div class="modal fade" id="videoModal" tabindex="-1"
+         aria-labelledby="videoModalLabel" aria-hidden="true" data-bs-theme="dark">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content bg-dark text-white border-0 rounded-4 overflow-hidden shadow-lg">
+
+                <div class="modal-header border-0 py-2 bg-dark">
+                    <h5 class="modal-title fw-bold small" id="videoModalLabel">
+                        <i class="fa-solid fa-paw text-warning me-2"></i>О нашем приюте
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white"
+                            data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+
+                <div class="modal-body p-0 bg-black">
+                    <div class="position-relative" style="aspect-ratio: 16 / 9;">
+                        <video autoplay muted loop playsinline controls poster="modal.png"
+                               style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block;">
+                            <source src="dog.mp4" type="video/mp4">
+                          
+                        </video>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
