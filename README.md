@@ -11,3 +11,5 @@
 Тема3пр1 https://pugachevugin.github.io/internet_programmirovanie/Тема3пр1
 
 Тема5пр1 https://pugachevugin.github.io/internet_programmirovanie/Тема5пр1
+
+Тема5пр2-3 https://pugachevugin.github.io/internet_programmirovanie/Тема5пр2-3
