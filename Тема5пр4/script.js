@@ -16,7 +16,7 @@ for (let i = 0; i < items.length; i++) {
         for (let j = 0; j < items.length; j++) {
 
             if (items[j].classList.contains('selected')) {
-                totalCount++; /
+                totalCount++;
                 
                 let number = parseInt(items[j].innerText);
                 totalSum = totalSum + number;
